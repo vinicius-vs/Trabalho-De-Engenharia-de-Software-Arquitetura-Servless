@@ -6,6 +6,5 @@
 
         public string Cpf { get; set; }
 
-        public int ID { get; set; }
     }
 }
