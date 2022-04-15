@@ -4,12 +4,15 @@ namespace Servless_GeracaoDeBoleto.Repository
 {
     public class BuscarInfoRepository
     {
-        private List<UserModel> listaClinte;
+        private List<UserModel> listaClinte ;
 
         private List<ServicoModel> listaServico;
 
         public BuscarInfoRepository()
         {
+
+            listaClinte = new List<UserModel>();
+            listaServico = new List<ServicoModel>();
             UserModel user = new UserModel();
             ServicoModel servicoModel = new ServicoModel();
 
