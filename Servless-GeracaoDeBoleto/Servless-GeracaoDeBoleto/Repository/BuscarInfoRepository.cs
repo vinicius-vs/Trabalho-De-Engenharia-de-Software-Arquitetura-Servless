@@ -4,14 +4,14 @@ namespace Servless_GeracaoDeBoleto.Repository
 {
     public class BuscarInfoRepository
     {
-        private List<UserModel> listaClinte ;
+        private List<UserModel> listaCliente ;
 
         private List<ServicoModel> listaServico;
 
         public BuscarInfoRepository()
         {
 
-            listaClinte = new List<UserModel>();
+            listaCliente = new List<UserModel>();
             listaServico = new List<ServicoModel>();
          
 
@@ -25,7 +25,7 @@ namespace Servless_GeracaoDeBoleto.Repository
                 user.NomeCompleto = "Teste " + Convert.ToString(i);
                 user.Cpf = "000000000-0" + Convert.ToString(i);
 
-                listaClinte.Add(user);
+                listaCliente.Add(user);
 
                 servicoModel.nome = "Serviço "+ Convert.ToString(i);
                 servicoModel.Descricao = "Serviço " + Convert.ToString(i);
@@ -42,7 +42,7 @@ namespace Servless_GeracaoDeBoleto.Repository
         {
             UserModel cliente = new UserModel();
             
-            foreach (UserModel user in listaClinte)
+            foreach (UserModel user in listaCliente)
             {
                 if(user.Cpf == cpf)
                 {
