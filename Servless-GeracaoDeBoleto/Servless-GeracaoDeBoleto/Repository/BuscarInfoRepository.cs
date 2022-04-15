@@ -8,6 +8,35 @@ namespace Servless_GeracaoDeBoleto.Repository
 
         private List<ServicoModel> listaServico;
 
+        public BuscarInfoRepository()
+        {
+            UserModel user = new UserModel();
+            ServicoModel servicoModel = new ServicoModel();
+
+            Random random = new Random();
+
+            for (int i = 0; i < 10; i++)
+            {
+                user.NomeCompleto = "Teste " + Convert.ToString(i);
+                user.Cpf = "000000000-0" + Convert.ToString(i);
+
+                listaClinte.Add(user);
+
+                servicoModel.nome = "Serviço "+ Convert.ToString(i);
+                servicoModel.Descricao = "Serviço " + Convert.ToString(i);
+                servicoModel.valor = random.Next(90, 300);
+                servicoModel.Cliente = user;
+
+                listaServico.Add(servicoModel);
+
+            }
+
+            
+
+
+        }
+
+
         public UserModel PesquisarCliente(string cpf)
         {
             UserModel cliente = new UserModel();
