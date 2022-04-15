@@ -13,13 +13,15 @@ namespace Servless_GeracaoDeBoleto.Repository
 
             listaClinte = new List<UserModel>();
             listaServico = new List<ServicoModel>();
-            UserModel user = new UserModel();
-            ServicoModel servicoModel = new ServicoModel();
+         
 
             Random random = new Random();
 
             for (int i = 0; i < 10; i++)
             {
+                UserModel user = new UserModel();
+                ServicoModel servicoModel = new ServicoModel();
+
                 user.NomeCompleto = "Teste " + Convert.ToString(i);
                 user.Cpf = "000000000-0" + Convert.ToString(i);
 
@@ -27,16 +29,12 @@ namespace Servless_GeracaoDeBoleto.Repository
 
                 servicoModel.nome = "Serviço "+ Convert.ToString(i);
                 servicoModel.Descricao = "Serviço " + Convert.ToString(i);
-                servicoModel.valor = random.Next(90, 300);
+                servicoModel.valor =  random.Next(90, 300);
                 servicoModel.Cliente = user;
 
                 listaServico.Add(servicoModel);
 
             }
-
-            
-
-
         }
 
 
@@ -66,6 +64,11 @@ namespace Servless_GeracaoDeBoleto.Repository
             }
 
             return servico;
+        }
+        public string GerarCodigo()
+        {
+            Random rand = new Random();
+            return Convert.ToString(rand.Next(10000, 99999)) + " " + Convert.ToString(rand.Next(10000, 99999)) + " " + Convert.ToString(rand.Next(10000, 99999)) + " " + Convert.ToString(rand.Next(10000, 99999)) + " " + Convert.ToString(rand.Next(0, 9)); 
         }
     }
 }
